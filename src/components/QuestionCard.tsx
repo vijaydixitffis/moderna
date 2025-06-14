@@ -21,19 +21,19 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({ question, answer, on
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6 mb-4 hover:shadow-lg transition-all duration-300">
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+    <div className="bg-white rounded-xl shadow-md border border-gray-100 p-4 mb-3 hover:shadow-lg transition-all duration-300">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-2">
         <div className="flex-1">
-          <div className="flex items-start gap-3">
-            <span className="inline-flex items-center justify-center w-8 h-8 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold flex-shrink-0 mt-1">
+          <div className="flex items-start gap-2">
+            <span className="inline-flex items-center justify-center w-6 h-6 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold flex-shrink-0 mt-0.5">
               {question.id}
             </span>
-            <p className="text-gray-800 font-medium leading-relaxed">{question.text}</p>
+            <p className="text-gray-800 font-medium leading-relaxed text-sm">{question.text}</p>
           </div>
         </div>
         
-        <div className="flex flex-col items-center gap-2 lg:flex-shrink-0 min-w-[100px]">
-          <div className="w-1/2 flex justify-between text-sm font-medium px-1">
+        <div className="flex flex-col items-center gap-1 lg:flex-shrink-0 min-w-[100px]">
+          <div className="w-1/2 flex justify-between text-xs font-medium px-1">
             <span className="text-red-600">No</span>
             <span className="text-green-600">Yes</span>
           </div>
@@ -44,7 +44,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({ question, answer, on
               max="100"
               value={sliderValue}
               onChange={handleSliderChange}
-              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-gradient"
+              className="w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-gradient"
               style={{
                 background: `linear-gradient(to right, 
                   ${sliderValue <= 50 ? '#ef4444' : '#22c55e'} 
@@ -52,9 +52,6 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({ question, answer, on
                   #e5e7eb ${sliderValue}%)`
               }}
             />
-          </div>
-          <div className="text-sm font-medium text-gray-600">
-            {sliderValue >= 50 ? 'Yes' : 'No'}
           </div>
         </div>
       </div>

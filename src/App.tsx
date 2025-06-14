@@ -152,13 +152,6 @@ function App() {
           </div>
         )}
 
-        {/* Compact Overall Progress */}
-        <OverallProgress
-          categoryProgress={categoryProgress}
-          totalQuestions={totalQuestions}
-          answeredQuestions={answeredQuestions}
-        />
-
         {/* Categories Grid - Fixed Height */}
         <div className="flex-1 min-h-0">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 h-[75%]">
@@ -171,6 +164,15 @@ function App() {
               />
             ))}
           </div>
+        </div>
+
+        {/* Compact Overall Progress */}
+        <div className="mt-1 mb-2">
+          <OverallProgress
+            categoryProgress={categoryProgress}
+            totalQuestions={totalQuestions}
+            answeredQuestions={answeredQuestions}
+          />
         </div>
 
         {/* Compact Submit Button */}
