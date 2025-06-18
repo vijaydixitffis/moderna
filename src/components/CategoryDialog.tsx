@@ -124,18 +124,22 @@ export const CategoryDialog: React.FC<CategoryDialogProps> = ({
             ))}
           </div>
 
-          <button
-            onClick={onNext}
-            disabled={!hasNext}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-              hasNext
-                ? 'bg-blue-600 text-white hover:bg-blue-700'
-                : 'bg-gray-100 text-gray-400 cursor-not-allowed'
-            }`}
-          >
-            Next
-            <ChevronRight className="w-4 h-4" />
-          </button>
+          {hasNext ? (
+            <button
+              onClick={onNext}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 bg-blue-600 text-white hover:bg-blue-700"
+            >
+              Next
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          ) : (
+            <button
+              onClick={onClose}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 bg-green-600 text-white hover:bg-green-700"
+            >
+              Close
+            </button>
+          )}
         </div>
       </div>
     </div>
